@@ -1,10 +1,8 @@
 import {Client} from 'pg';
 import dotenv from 'dotenv';
-dotenv.config();
+dotenv.config({ quiet: true });
+const { PORT, DB_USER, DB_PASS } = process.env;
 
-const port = process.env.PORT;
-const dbUser = process.env.DB_USER;
-const dbPass = process.env.DB_PASS;
 
 
 
@@ -12,11 +10,11 @@ const dbPass = process.env.DB_PASS;
 
 async function connectAndQuery() {
   const client = new Client({
-    user: dbUser,
+    user: DB_USER,
     host: 'localhost',
     database: 'todos',
-    password: dbPass,
-    port: port,
+    password: DB_PASS,
+    port: PORT,
   });
 
 
@@ -64,4 +62,6 @@ let data = async () => {
 } 
 
 let arr = await data();
+
+console.log(arr);
 
