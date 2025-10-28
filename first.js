@@ -1,17 +1,25 @@
-const {program } = require('commander');
-
-program
-    .description('a program to repeat what you say')
-    .option('-a, --alpha', 'Alpha')
-    .option('-b, --beta,  ','nothing much','foo');
+//export and import in javascript
 
 
-program.parse();
+// // export an array
+let months = ['Jan', 'Feb', 'Mar','Apr', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-const options = program.opts();
-console.log('Options detected: ')
+// // export a constant
+// export const MODULES_BECAME_STANDARD_YEAR = 2015;
 
-if (options.alpha) console.log('alpha');
- 
-const beta = !options.beta ? 'no' : options.beta;
-console.log('beta is: %s', beta);
+// // export a class
+// export class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }
+
+function sayHi() {
+  console.log("hello sir");
+}
+
+function sayBye(){
+  console.log("bye bye")
+}
+
+export{months,sayBye,sayHi};
