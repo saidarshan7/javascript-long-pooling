@@ -2,7 +2,7 @@
 
 # Variables, data types, operators
 
-Functions and scope
+# Functions and scope
 
 Loops and conditionals
 
